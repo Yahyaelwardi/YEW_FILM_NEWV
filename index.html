@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yew Film App - Watch Movies, TV Shows, and Anime with a 6-star rating system.">
+    <meta name="keywords" content="Yew Film, watch movies, anime, 6-star rating, Facebook login">
+    <title>Yew Film App - download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Toolbar -->
+    <div class="toolbar" id="toolbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="title">
+          <span class="yew">YEW</span> <span class="film">FILM</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    
+    <!-- Menu -->
+    <div class="menu" id="menu">
+        <a href="https://facebook.com/groups/1533983804201898/" class="facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span class="tooltip">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/admin.yewfilm?igsh=Y2RqdXU2YW82ZTN0" class="instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Instagram</span>
+        </a>
+        <a href="https://whatsapp.com/channel/0029Vaf6W4435fLlx84MIf3E" class="whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">Security on Yew Film</h1>
+        </header>
+
+        <section class="info-section">
+            <div class="security-info">
+                <h2>Why Sign in with Facebook?</h2>
+                <p>
+                    Yew Film requires you to sign in using your Facebook account to ensure a seamless experience. Using Facebook's API, we provide quick and secure access to our extensive library of movies, TV shows, and anime. This ensures safe and fast access to the content you love.
+                </p>
+            </div>
+
+            <div class="api-info">
+                <h2>How Does the Facebook API Work?</h2>
+                <p>
+                    The Facebook API allows us to easily and securely connect your account with our services. It enables us to provide personalized recommendations, and you can keep track of ratings for your favorite shows and movies.
+                </p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+          <h2>Download the app now and enjoy the best movies, series and anime.</h2>
+          <a href="YewFilm.apk" class="register-btn" download>click to download</a>
+            
+            <p>I hope you enjoy watching.</p>
+            
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Yew Film. All rights reserved.</p>
+        </footer>
+
+        <!-- Floating Action Button (FAB) for Language Toggle -->
+        <button id="lang-toggle" onclick="toggleLanguage()">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <script>
+    
+    
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J')) {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'PrintScreen') {
+        alert("Screenshots are disabled on this site.");
+        e.preventDefault();
+      }
+    });
+    
+    window.addEventListener('blur', function() {
+      // For screen recording tools, force reload on blur
+      location.reload();
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+        let isArabic = false;
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        function toggleLanguage() {
+            const langToggle = document.getElementById('lang-toggle');
+
+            if (!isArabic) {
+                document.querySelector('h1').textContent = 'الأمان في Yew Film';
+                document.querySelectorAll('h2')[0].textContent = 'لماذا يجب عليك التسجيل عبر Facebook؟';
+                document.querySelectorAll('h2')[1].textContent = 'كيف يعمل Facebook API؟';
+                document.querySelectorAll('p')[0].textContent = 'يتطلب تطبيق Yew Film التسجيل بحساب Facebook لضمان تجربة سلسة وآمنة.';
+                document.querySelectorAll('p')[1].textContent = 'يسمح لنا Facebook API بربط حسابك بخدماتنا بسهولة وأمان، مما يمكننا من توفير توصيات مخصصة وتقييمات للمحتويات التي تفضلها.';
+                document.querySelectorAll('p')[2].textContent = 'أتمنى لك مشاهدة ممتعة .';
+                document.querySelector('.register-btn').textContent = '  إظغط هنـا للتحميل  ';
+                langToggle.innerHTML = '<i class="fas fa-language"></i>';
+                isArabic = true;
+            } else {
+                document.querySelector('h1').textContent = 'Security on Yew Film';
+                document.querySelectorAll('h2')[0].textContent = 'Why Sign in with Facebook?';
+                document.querySelectorAll('h2')[1].textContent = 'How Does the Facebook API Work?';
+                document.querySelectorAll('p')[0].textContent = 'Yew Film requires you to sign in using your Facebook account to ensure a seamless experience.';
+                document.querySelectorAll('p')[1].textContent = 'The Facebook API allows us to easily and securely connect your account with our services.';
+                document.querySelectorAll('p')[2].textContent = 'I hope you enjoy watching.';
+                document.querySelector('.register-btn').textContent = 'click to download';
+                langToggle.innerHTML = '<i class="fas fa-language"></i>';
+                isArabic = false;
+            }
+        }
+    </script>
+</body>
+</html>
